@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: url('imagenes/contralorias.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.encabezado {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px; /* Ajuste para asegurarse de que el menú tenga suficiente espacio */
+}
+
+.menu a {
+  flex-grow: 1;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.menu a:hover, .menu a.active {
+  background-color: rgb(63, 87, 65);
+}
+
+.contenido {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.contenido img {
+  max-width: 100%;
+  height: auto;
+}
+
+.contenido_infraeca, .contenido_eca, .conten_blog, .conten_info {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  padding: 10px;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.contenido_infraeca img, .contenido_eca img, .conten_blog img, .conten_info img {
+  max-width: 80%; /* Ajusta el tamaño máximo al 80% */
+  height: auto;
+}
+
+.conten_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
