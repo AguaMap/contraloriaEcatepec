@@ -98,30 +98,24 @@ body {
   padding: 10px;
 }
 
-.submenu a {
+.submenu a img {
   display: block;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.9em; /* Reducir tamaño del texto */
-  color: black;
-  background-color: white;
-  padding: 5px 10px; /* Reducir padding */
-  border-radius: 20px;
-  transition: background-color 0.3s, color 0.3s;
-  border: 2px solid #ccc; /* Añade un borde similar al de la imagen */
-  max-width: 100px; /* Limitar ancho del botón */
-  margin: 0 auto; /* Centrar el botón dentro de la celda */
-}
-
-.submenu a:hover {
-  background-color: #ddd; /* Cambia el color de fondo al pasar el mouse */
-  color: #000; /* Cambia el color del texto al pasar el mouse */
-}
-
-.submenu img {
-  margin-top: 10px;
+  margin: 0 auto;
   max-width: 100px; /* Tamaño aumentado a 100px */
   height: auto;
+}
+
+.submenu div {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: black;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 2px solid #ccc;
+  max-width: 100px;
+  margin: 10px auto 0;
 }
 
 /* Estilo para los bloques de texto */
@@ -144,4 +138,14 @@ body {
   margin-bottom: 10px; /* Espacio entre el título y el texto */
   font-size: 1.1em;
   color: white;
+}
+
+.justificado {
+  text-align: justify;
+  color: white; /* Asegurar que el texto sea blanco */
+}
+
+.centrado {
+  text-align: center;
+  color: white; /* Asegurar que el texto sea blanco */
 }
