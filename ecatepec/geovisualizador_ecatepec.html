@@ -5,6 +5,7 @@
 <title>Contralorías del Agua</title>
 <link rel="stylesheet" href="styles_ecatepec.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-providers/leaflet-providers.css" />
 <style>
   #mapa {
     height: 600px;
@@ -28,16 +29,20 @@
 
 <div id="mapa"></div>
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-providers/leaflet-providers.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     // Crear el mapa
     var map = L.map('mapa').setView([19.609723, -99.060042], 12); // Coordenadas centrales de Ecatepec con zoom inicial
 
-    // Añadir capa base de OpenStreetMap
+    // Añadir capas base
     var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '© OpenStreetMap'
     }).addTo(map);
+
+    var googleStreets = L.tileLayer.provider('GoogleStreets');
+    var googleSatellite = L.tileLayer.provider('GoogleSatellite');
 
     // Función para ajustar los límites del mapa
     function getBounds(geojson) {
@@ -64,8 +69,7 @@
             color: '#0000ff', // Orilla azul
             weight: 2,
             opacity: 1,
-            fillColor: '#0000ff', // Sin relleno
-            fillOpacity: 0 // Transparencia 100%
+            fillOpacity: 0 // Sin relleno
           }
         }).addTo(map);
 
@@ -75,10 +79,17 @@
         map.fitBounds(bounds);
 
         // Añadir control de capas
+        var baseMaps = {
+          "OpenStreetMap": osm,
+          "Google Maps": googleStreets,
+          "Google Satellite": googleSatellite
+        };
+
         var overlayMaps = {
           "Ecatepec": geojsonLayer
         };
-        L.control.layers(null, overlayMaps).addTo(map);
+
+        L.control.layers(baseMaps, overlayMaps).addTo(map);
       })
       .catch(error => console.error('Error al cargar el archivo GeoJSON:', error));
   });
@@ -86,4 +97,5 @@
   
 </body>
 </html>
+
 
