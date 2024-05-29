@@ -28,7 +28,6 @@
 
 <div id="mapa"></div>
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="https://unpkg.com/leaflet-providers@1.13.0/leaflet-providers.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     // Crear el mapa
@@ -39,12 +38,6 @@
       maxZoom: 19,
       attribution: '© OpenStreetMap'
     }).addTo(map);
-
-    // Añadir capa base de Google Satellite
-    var googleSat = L.tileLayer.provider('GoogleSatellite');
-
-    // Añadir capa base de Google Maps
-    var googleMaps = L.tileLayer.provider('GoogleMaps');
 
     // Función para ajustar los límites del mapa
     function getBounds(geojson) {
@@ -82,17 +75,10 @@
         map.fitBounds(bounds);
 
         // Añadir control de capas
-        var baseMaps = {
-          "OpenStreetMap": osm,
-          "Google Satellite": googleSat,
-          "Google Maps": googleMaps
-        };
-
         var overlayMaps = {
           "Ecatepec": geojsonLayer
         };
-
-        L.control.layers(baseMaps, overlayMaps).addTo(map);
+        L.control.layers(null, overlayMaps).addTo(map);
       })
       .catch(error => console.error('Error al cargar el archivo GeoJSON:', error));
   });
