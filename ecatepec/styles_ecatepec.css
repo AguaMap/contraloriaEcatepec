@@ -144,3 +144,12 @@ body {
   font-size: 1.1em;
   color: white;
 }
+.justificado {
+  text-align: justify;
+  color: white; /* Asegurar que el texto sea blanco */
+}
+
+.centrado {
+  text-align: center;
+  color: white; /* Asegurar que el texto sea blanco */
+}
