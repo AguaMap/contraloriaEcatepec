@@ -84,20 +84,19 @@ body {
 }
 
 /* Estilo específico para el submenú */
-.submenu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
+.submenu table {
+  width: 100%;
+  table-layout: fixed;
 }
 
-.submenu li {
-  margin: 0 20px;
+.submenu td {
   text-align: center;
+  vertical-align: top;
+  padding: 10px;
 }
 
 .submenu a {
+  display: block;
   text-decoration: none;
   font-weight: 700;
   font-size: 1.2em;
@@ -106,8 +105,6 @@ body {
   padding: 10px 20px;
   border-radius: 20px;
   transition: background-color 0.3s, color 0.3s;
-  display: block;
-  text-align: center;
   border: 2px solid #ccc; /* Añade un borde similar al de la imagen */
 }
 
@@ -118,7 +115,7 @@ body {
 
 .submenu img {
   margin-top: 10px;
-  max-width: 100px;
+  max-width: 50px; /* Tamaño reducido para que las imágenes queden en la misma fila */
   height: auto;
 }
 
@@ -142,3 +139,4 @@ body {
   font-size: 1.1em;
   color: white;
 }
+
