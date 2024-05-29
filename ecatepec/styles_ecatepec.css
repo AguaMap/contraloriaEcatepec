@@ -23,10 +23,10 @@ body {
 
 .menu {
   display: flex;
-  justify-content: space-around; /* Espaciado entre los elementos */
+  justify-content: space-around;
   background-color: rgba(0, 0, 0, 0.5);
   width: 80%;
-  max-width: 800px; /* Ajustar ancho máximo */
+  max-width: 800px;
   border-radius: 10px;
   overflow: hidden;
   margin-top: 20px;
@@ -34,12 +34,12 @@ body {
 
 .menu a {
   flex-grow: 1;
-  padding: 10px 5px; /* Ajustar padding para mantener los elementos dentro del contenedor */
+  padding: 10px 5px;
   text-decoration: none;
   color: white;
   text-align: center;
   transition: background-color 0.3s;
-  max-width: 120px; /* Ajustar ancho máximo de los botones */
+  max-width: 120px;
 }
 
 .menu a:hover, .menu a.active {
@@ -62,7 +62,7 @@ body {
   height: auto;
 }
 
-.contenido_infraeca, .contenido_eca, .conten_blog, .conten_info {
+.contenido_eca, .contenido_infraeca, .conten_blog, .conten_info {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   width: 80%;
@@ -73,8 +73,8 @@ body {
   margin-bottom: 20px;
 }
 
-.contenido_infraeca img, .contenido_eca img, .conten_blog img, .conten_info img {
-  max-width: 80%; /* Ajusta el tamaño máximo al 80% */
+.contenido_eca img, .contenido_infraeca img, .conten_blog img, .conten_info img {
+  max-width: 80%;
   height: auto;
 }
 
@@ -84,68 +84,42 @@ body {
   align-items: center;
 }
 
-/* Estilo específico para el submenú */
-.submenu table {
-  width: 50%; /* Ajusta el ancho del submenú al 50% */
-  max-width: 400px; /* Limita el ancho máximo */
-  table-layout: fixed;
-  margin: 20px 0; /* Añade margen para separación */
-}
-
-.submenu td {
-  text-align: center;
-  vertical-align: top;
-  padding: 10px;
-}
-
-.submenu a img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100px; /* Tamaño aumentado a 100px */
-  height: auto;
-}
-
-.submenu div {
-  margin-top: 10px;
-  font-weight: 700;
-  font-size: 0.9em;
-  color: black;
-  background-color: white;
-  padding: 5px 10px;
-  border-radius: 20px;
-  border: 2px solid #ccc;
-  max-width: 100px;
-  margin: 10px auto 0;
-}
-
-/* Estilo para los bloques de texto */
-.text-block {
-  background-color: rgba(0, 0, 0, 0.7);
+.blog-container {
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   width: 80%;
   max-width: 800px;
   padding: 20px;
-  text-align: justify;
-  margin: 20px 0;
-  color: white;
-  font-size: 0.8em; /* Tamaño de fuente más pequeño */
-  line-height: 1.6; /* Aumenta el espacio entre renglones */
+  margin-top: 20px;
 }
 
-.text-block h2 {
-  text-align: center;
+.blog-post {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.blog-post h2 {
   margin-top: 0;
-  margin-bottom: 10px; /* Espacio entre el título y el texto */
-  font-size: 1.1em;
-  color: white;
 }
 
-.justificado {
-  text-align: justify;
-  color: white; /* Asegurar que el texto sea blanco */
+.blog-date {
+  color: gray;
+  font-size: 0.9em;
 }
 
-.centrado {
-  text-align: center;
-  color: white; /* Asegurar que el texto sea blanco */
+.blog-content {
+  margin: 10px 0;
 }
+
+.read-more {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
