@@ -85,8 +85,8 @@ body {
 
 /* Estilo específico para el submenú */
 .submenu table {
-  width: 80%; /* Ajusta el ancho del submenú para alinearlo con los text-block */
-  max-width: 800px;
+  width: 50%; /* Ajusta el ancho del submenú al 50% */
+  max-width: 400px; /* Limita el ancho máximo */
   table-layout: fixed;
   margin: 20px 0; /* Añade margen para separación */
 }
@@ -101,14 +101,14 @@ body {
   display: block;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1em; /* Reducir tamaño del texto */
+  font-size: 0.9em; /* Reducir tamaño del texto */
   color: black;
   background-color: white;
   padding: 5px 10px; /* Reducir padding */
   border-radius: 20px;
   transition: background-color 0.3s, color 0.3s;
   border: 2px solid #ccc; /* Añade un borde similar al de la imagen */
-  max-width: 120px; /* Limitar ancho del botón */
+  max-width: 100px; /* Limitar ancho del botón */
   margin: 0 auto; /* Centrar el botón dentro de la celda */
 }
 
@@ -134,6 +134,7 @@ body {
   margin: 20px 0;
   color: white;
   font-size: 0.8em; /* Tamaño de fuente más pequeño */
+  line-height: 1.6; /* Aumenta el espacio entre renglones */
 }
 
 .text-block h2 {
