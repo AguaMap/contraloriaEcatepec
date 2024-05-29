@@ -4,10 +4,8 @@
 <meta charset="UTF-8">
 <title>Contralorías del Agua</title>
 <link rel="stylesheet" href="styles_ecatepec.css">
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-<script src="script_mapa.js"></script>
-<script src="script_ecatepec.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
 <div class="encabezado">
@@ -15,15 +13,46 @@
 </div>
 <div class="menu">
   <a href="https://aguamap.github.io/contraloriaEcatepec/index.html">Inicio</a>
-  <a href="contraloria_ecatepec.html" >Ecatepec</a>
+  <a href="contraloria_ecatepec.html">Ecatepec</a>
   <a href="infraestructura_ecatepec.html">Infraestructura</a>
   <a href="zonificacion_ecatepec.html">Zonificación</a>
-  <a href="geovisualizador_ecatepec.html">Geovisualizador</a>
+  <a href="geovisualizador_ecatepec.html" class="active">Geovisualizador</a>
   <a href="blog_ecatepec.html">Blog</a>
   <a href="https://reporteciudadano_caem.edomex.gob.mx:8096/" target="_blank">Reporte Ciudadano</a>
 </div>
 
-<div id="mapa"></div>
+<div id="mapa" style="height: 600px;"></div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Crear el mapa
+    var map = L.map('mapa').setView([19.609723, -99.060042], 12); // Coordenadas centrales de Ecatepec con zoom inicial
+
+    // Añadir capa base de OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // Añadir capa GeoJSON
+    fetch('mun_ecatepec.geojson')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        var geojsonLayer = L.geoJson(data, {
+          style: {
+            color: '#ff7800',
+            weight: 2,
+            opacity: 0.65
+          }
+        }).addTo(map);
+      })
+      .catch(error => console.error('Error al cargar el archivo GeoJSON:', error));
+  });
+</script>
 </body>
 </html>
