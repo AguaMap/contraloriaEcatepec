@@ -23,22 +23,23 @@ body {
 
 .menu {
   display: flex;
-  justify-content: center;
+  justify-content: space-around; /* Espaciado entre los elementos */
   background-color: rgba(0, 0, 0, 0.5);
   width: 80%;
-  max-width: 600px;
+  max-width: 800px; /* Ajustar ancho máximo */
   border-radius: 10px;
   overflow: hidden;
-  margin-top: 20px; /* Ajuste para asegurarse de que el menú tenga suficiente espacio */
+  margin-top: 20px;
 }
 
 .menu a {
   flex-grow: 1;
-  padding: 10px 20px;
+  padding: 10px 5px; /* Ajustar padding para mantener los elementos dentro del contenedor */
   text-decoration: none;
   color: white;
   text-align: center;
   transition: background-color 0.3s;
+  max-width: 120px; /* Ajustar ancho máximo de los botones */
 }
 
 .menu a:hover, .menu a.active {
