@@ -13,31 +13,13 @@ document.addEventListener('DOMContentLoaded', function () {
     "OpenStreetMap": osm
   };
 
-  var overlayMaps = {};
-
   // Añadir control de capas
-  L.control.layers(baseMaps, overlayMaps).addTo(map);
+  L.control.layers(baseMaps).addTo(map);
 
   // Controles de zoom
   L.control.zoom({
     position: 'topright'
   }).addTo(map);
 
-  // Añadir capa GeoJSON
-  fetch('mun_ecatepec.geojson')
-    .then(response => response.json())
-    .then(data => {
-      var geojsonLayer = L.geoJson(data, {
-        style: {
-          color: '#ff7800',
-          weight: 2,
-          opacity: 0.65
-        }
-      });
-
-      // Añadir la capa GeoJSON al control de capas
-      overlayMaps["Ecatepec"] = geojsonLayer;
-      map.addLayer(geojsonLayer);
-    })
-    .catch(error => console.error('Error al cargar el archivo GeoJSON:', error));
+  // Solo el mapa base por ahora
 });
