@@ -115,7 +115,7 @@ body {
 
 .submenu img {
   margin-top: 10px;
-  max-width: 50px; /* Tamaño reducido para que las imágenes queden en la misma fila */
+  max-width: 80px; /* Tamaño aumentado a 80px */
   height: auto;
 }
 
@@ -139,4 +139,3 @@ body {
   font-size: 1.1em;
   color: white;
 }
-
