@@ -85,8 +85,10 @@ body {
 
 /* Estilo específico para el submenú */
 .submenu table {
-  width: 100%;
+  width: 80%; /* Ajusta el ancho del submenú para alinearlo con los text-block */
+  max-width: 800px;
   table-layout: fixed;
+  margin: 20px 0; /* Añade margen para separación */
 }
 
 .submenu td {
@@ -99,13 +101,15 @@ body {
   display: block;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.2em;
+  font-size: 1em; /* Reducir tamaño del texto */
   color: black;
   background-color: white;
-  padding: 10px 20px;
+  padding: 5px 10px; /* Reducir padding */
   border-radius: 20px;
   transition: background-color 0.3s, color 0.3s;
   border: 2px solid #ccc; /* Añade un borde similar al de la imagen */
+  max-width: 120px; /* Limitar ancho del botón */
+  margin: 0 auto; /* Centrar el botón dentro de la celda */
 }
 
 .submenu a:hover {
@@ -115,7 +119,7 @@ body {
 
 .submenu img {
   margin-top: 10px;
-  max-width: 80px; /* Tamaño aumentado a 80px */
+  max-width: 100px; /* Tamaño aumentado a 100px */
   height: auto;
 }
 
