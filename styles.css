@@ -89,12 +89,12 @@ body {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
 .submenu li {
-  margin: 10px 0;
+  margin: 0 20px;
+  text-align: center;
 }
 
 .submenu a {
@@ -114,6 +114,12 @@ body {
 .submenu a:hover {
   background-color: #ddd; /* Cambia el color de fondo al pasar el mouse */
   color: #000; /* Cambia el color del texto al pasar el mouse */
+}
+
+.submenu img {
+  margin-top: 10px;
+  max-width: 100px;
+  height: auto;
 }
 
 /* Estilo para los bloques de texto */
@@ -136,5 +142,3 @@ body {
   font-size: 1.1em;
   color: white;
 }
-
-
