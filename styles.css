@@ -126,14 +126,14 @@ body {
   text-align: justify;
   margin: 20px 0;
   color: white;
-  font-size: 0.9em; /* Tamaño de fuente más pequeño */
+  font-size: 0.8em; /* Tamaño de fuente más pequeño */
 }
 
 .text-block h2 {
   text-align: center;
   margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 1.2em;
+  margin-bottom: 10px; /* Espacio entre el título y el texto */
+  font-size: 1.1em;
   color: white;
 }
 
