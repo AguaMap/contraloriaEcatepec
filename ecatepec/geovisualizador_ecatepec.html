@@ -39,6 +39,17 @@
       attribution: '© OpenStreetMap'
     }).addTo(map);
 
+    // Función para ajustar los límites del mapa
+    function getBounds(geojson) {
+      var bounds = [];
+      geojson.features.forEach(function(feature) {
+        feature.geometry.coordinates[0][0].forEach(function(coord) {
+          bounds.push([coord[1], coord[0]]);
+        });
+      });
+      return bounds;
+    }
+
     // Añadir capa GeoJSON
     fetch('mun_ecatepec.geojson')
       .then(response => {
@@ -53,19 +64,21 @@
             color: '#0000ff', // Orilla azul
             weight: 2,
             opacity: 1,
-            fillColor: '#0000ff', // Relleno azul claro
-            fillOpacity: 0.5 // Transparencia 50%
+            fillColor: '#0000ff', // Sin relleno
+            fillOpacity: 0 // Transparencia 100%
           }
-        });
+        }).addTo(map);
+
+        // Ajustar los límites del mapa para que no se pueda hacer zoom out más allá del municipio
+        var bounds = getBounds(data);
+        map.setMaxBounds(bounds);
+        map.fitBounds(bounds);
 
         // Añadir control de capas
         var overlayMaps = {
           "Ecatepec": geojsonLayer
         };
         L.control.layers(null, overlayMaps).addTo(map);
-
-        // Añadir la capa GeoJSON al mapa
-        geojsonLayer.addTo(map);
       })
       .catch(error => console.error('Error al cargar el archivo GeoJSON:', error));
   });
@@ -73,3 +86,4 @@
   
 </body>
 </html>
+
