@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: url('imagenes_ecatepec/contralorias.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.encabezado {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 80%;
+  max-width: 800px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.menu a {
+  flex-grow: 1;
+  padding: 10px 5px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  transition: background-color 0.3s;
+  max-width: 120px;
+}
+
+.menu a:hover, .menu a.active {
+  background-color: rgb(63, 87, 65);
+}
+
+.contenido {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.contenido img {
+  max-width: 100%;
+  height: auto;
+}
+
+.contenido_eca, .contenido_infraeca, .conten_blog, .conten_info {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  padding: 10px;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.contenido_eca img, .contenido_infraeca img, .conten_blog img, .conten_info img {
+  max-width: 80%;
+  height: auto;
+}
+
+.conten_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.blog-post {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.blog-post h2 {
+  margin-top: 0;
+}
+
+.blog-date {
+  color: gray;
+  font-size: 0.9em;
+}
+
+.blog-content {
+  margin: 10px 0;
+}
+
+.read-more {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
