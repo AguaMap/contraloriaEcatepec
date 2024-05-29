@@ -74,7 +74,7 @@
         }).addTo(map);
 
         // Ajustar los límites del mapa para que no se pueda hacer zoom out más allá del municipio
-        var bounds = L.latLngBounds(getBounds(data));
+        var bounds = getBounds(data);
         map.setMaxBounds(bounds);
         map.fitBounds(bounds);
 
