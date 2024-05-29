@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <title>Contralorías del Agua</title>
 <link rel="stylesheet" href="styles_ecatepec.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 <script src="script_mapa.js"></script>
 <script src="script_ecatepec.js"></script>
 </head>
@@ -23,7 +23,16 @@
   <a href="https://reporteciudadano_caem.edomex.gob.mx:8096/" target="_blank">Reporte Ciudadano</a>
 </div>
 
-<div id="mapa" style="height: 600px;"></div>
+<div id="mapa"></div>
+<script>
+
+	var map = L.map('map').setView([36.720, -4.420], 15);
+
+	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+	attribution: 'Datos &copy; <a href="http://osm.org/copyright" target="blanck">Colaboradores de OpenStreetMap</a> (<a href="http://www.openstreetmap.org/copyright" target="blanck">ODbL</a>) | Teselas <a href="https://github.com/gravitystorm/openstreetmap-carto" target="blanck">OSM Carto</a> &copy; Randy Allan y otros colaboradores (<a href="https://creativecommons.org/licenses/by-sa/2.0/deed.es" target="blanck">CC BY-SA 2.0</a>)'
+	}).addTo(map);
+
+</script>
 
 </body>
 </html>
