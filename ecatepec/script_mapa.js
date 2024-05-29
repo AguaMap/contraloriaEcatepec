@@ -39,5 +39,5 @@ document.addEventListener('DOMContentLoaded', function () {
       overlayMaps["Ecatepec"] = geojsonLayer;
       map.addLayer(geojsonLayer);
     })
-    .catch(error => console.error(error));
+    .catch(error => console.error('Error al cargar el archivo GeoJSON:', error));
 });
