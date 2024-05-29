@@ -80,5 +80,61 @@ body {
   align-items: center;
 }
 
+.estilo-titulo {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  max-width: 600px;
+  margin-bottom: 10px;
+}
 
+.estilo-texto {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+/* Estilo específico para el submenú */
+.submenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submenu li {
+  margin: 10px 0;
+}
+
+.submenu a {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2em;
+  color: black;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+  display: block;
+  text-align: center;
+  border: 2px solid #ccc; /* Añade un borde similar al de la imagen */
+}
+
+.submenu a:hover {
+  background-color: #ddd; /* Cambia el color de fondo al pasar el mouse */
+  color: #000; /* Cambia el color del texto al pasar el mouse */
+}
 
