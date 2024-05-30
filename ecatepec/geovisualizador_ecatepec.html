@@ -60,7 +60,7 @@
       return bounds;
     }
 
-    var geojsonLayer, infraLayer, cutzaLayer, lineaLayer;
+    var geojsonLayer, infraLayer, cutzaLayer;
 
     // Añadir capa GeoJSON de Ecatepec
     fetch('mun_ecatepec.geojson')
@@ -142,37 +142,12 @@
       })
       .catch(error => console.error('Error al cargar el archivo GeoJSON:', error));
 
-    // Añadir capa GeoJSON de Linea
-    fetch('linea-geojson')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        lineaLayer = L.geoJson(data, {
-          style: {
-            color: '#0000ff', // Color azul
-            weight: 2,
-            opacity: 1,
-            fillColor: '#0000ff', // Sin relleno
-            fillOpacity: 0 // Transparencia 100%
-          }
-        }).addTo(map);
-
-        // Añadir la capa de linea al control de capas
-        updateLayerControl();
-      })
-      .catch(error => console.error('Error al cargar el archivo GeoJSON:', error));
-
     function updateLayerControl() {
-      if (geojsonLayer && infraLayer && cutzaLayer && lineaLayer) {
+      if (geojsonLayer && infraLayer && cutzaLayer) {
         var overlayMaps = {
           "Ecatepec": geojsonLayer,
           "Infraestructura": infraLayer,
-          "Sistema Cutzamala": cutzaLayer,
-          "Linea": lineaLayer
+          "Sistema Cutzamala": cutzaLayer
         };
         L.control.layers(null, overlayMaps).addTo(map);
       }
