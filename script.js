@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
   const pathname = window.location.pathname.split("/").pop();
-  const menuItems = document.querySelectorAll('.menu a');
+  const menuItems = document.querySelectorAll('.nav a');
 
   menuItems.forEach(item => {
     if (item.getAttribute('href') === pathname) {
@@ -22,17 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       item.classList.remove('active');
     }
-  });
-
-  const dropdown = document.querySelector('.dropdown');
-  const dropdownContent = document.querySelector('.dropdown-content');
-
-  dropdown.addEventListener('mouseover', function () {
-    dropdownContent.style.display = 'block';
-  });
-
-  dropdown.addEventListener('mouseout', function () {
-    dropdownContent.style.display = 'none';
   });
 });
 
